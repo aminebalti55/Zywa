@@ -43,4 +43,16 @@ Spring Boot was chosen for this project due to its ease of use, powerful feature
 - Make sure to modify the CSV file path in CsvStatementService and PDFGenerationService to point to the actual location of the banking_statements.csv file on your system.
 - Use appropriate tools, such as Postman or curl, to test the endpoints and verify their functionality.
 
-## Conclusion
+## Authentication 
+
+-Dependency Configuration: Add the necessary Spring Security dependencies to the pom.xml file.
+
+-Configuration: Configure Spring Security by creating a class that extends WebSecurityConfigurerAdapter and override the configure method to set up authentication and authorization rules.
+
+-User Authentication: Define a user authentication mechanism, either through an in-memory user store, JDBC authentication, or user details service.
+
+-Endpoint Security: Configure the security rules for each endpoint, specifying who can access them and what roles are required.
+
+-Token-Based Authentication (Optional): For more advanced scenarios, consider implementing token-based authentication using JSON Web Tokens (JWT) or OAuth.
+
+-Testing: Thoroughly test the secured endpoints to ensure that only authenticated and authorized users can access them.
