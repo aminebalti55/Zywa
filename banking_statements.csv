@@ -1,0 +1,5 @@
+user_email,date_of_transaction,amount
+alice@example.com,2023-01-01,100.00
+mohamedamine.balti@esprit.tn,2023-01-02,75.50
+alice@example.com,2023-01-03,50.00
+carol@example.com,2023-01-04,200.00
