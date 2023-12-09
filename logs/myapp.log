@@ -1,0 +1,180 @@
+2023-12-09T18:47:44.452+01:00  INFO 14052 --- [main] com.example.zywaa.ZywaaApplication       : Starting ZywaaApplication using Java 21.0.1 with PID 14052 (C:\Users\user\Documents\distributed-web\Zywaa\target\classes started by user in C:\Users\user\Documents\distributed-web\Zywaa)
+2023-12-09T18:47:44.455+01:00  INFO 14052 --- [main] com.example.zywaa.ZywaaApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T18:47:46.747+01:00  INFO 14052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2023-12-09T18:47:46.769+01:00  INFO 14052 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-09T18:47:46.770+01:00  INFO 14052 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-09T18:47:46.886+01:00  INFO 14052 --- [main] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring embedded WebApplicationContext
+2023-12-09T18:47:46.887+01:00  INFO 14052 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2254 ms
+2023-12-09T18:47:47.744+01:00  INFO 14052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/Banking'
+2023-12-09T18:47:47.759+01:00  INFO 14052 --- [main] com.example.zywaa.ZywaaApplication       : Started ZywaaApplication in 4.213 seconds (process running for 5.693)
+2023-12-09T18:47:55.260+01:00  INFO 14052 --- [http-nio-8087-exec-3] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-09T18:47:55.262+01:00  INFO 14052 --- [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-09T18:47:55.267+01:00  INFO 14052 --- [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-12-09T18:47:55.794+01:00 ERROR 14052 --- [http-nio-8087-exec-3] c.e.z.controllers.StatementController    : Unable to send email.
+
+java.lang.NullPointerException: Cannot invoke "String.getBytes(java.nio.charset.Charset)" because "src" is null
+	at java.base/java.util.Base64$Decoder.decode(Base64.java:593) ~[na:na]
+	at com.example.zywaa.controllers.StatementController.sendPdf(StatementController.java:70) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2023-12-09T18:51:14.277+01:00  INFO 22516 --- [main] com.example.zywaa.ZywaaApplication       : Starting ZywaaApplication using Java 21.0.1 with PID 22516 (C:\Users\user\Documents\distributed-web\Zywaa\target\classes started by user in C:\Users\user\Documents\distributed-web\Zywaa)
+2023-12-09T18:51:14.281+01:00  INFO 22516 --- [main] com.example.zywaa.ZywaaApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T18:51:17.465+01:00  INFO 22516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2023-12-09T18:51:17.490+01:00  INFO 22516 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-09T18:51:17.491+01:00  INFO 22516 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-09T18:51:17.660+01:00  INFO 22516 --- [main] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring embedded WebApplicationContext
+2023-12-09T18:51:17.660+01:00  INFO 22516 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3263 ms
+2023-12-09T18:51:18.552+01:00  INFO 22516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/Banking'
+2023-12-09T18:51:18.578+01:00  INFO 22516 --- [main] com.example.zywaa.ZywaaApplication       : Started ZywaaApplication in 5.698 seconds (process running for 7.922)
+2023-12-09T18:51:25.488+01:00  INFO 22516 --- [http-nio-8087-exec-2] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-09T18:51:25.490+01:00  INFO 22516 --- [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-09T18:51:25.498+01:00  INFO 22516 --- [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2023-12-09T18:56:16.947+01:00  INFO 18116 --- [main] com.example.zywaa.ZywaaApplication       : Starting ZywaaApplication using Java 21.0.1 with PID 18116 (C:\Users\user\Documents\distributed-web\Zywaa\target\classes started by user in C:\Users\user\Documents\distributed-web\Zywaa)
+2023-12-09T18:56:16.950+01:00  INFO 18116 --- [main] com.example.zywaa.ZywaaApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T18:56:19.219+01:00  INFO 18116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2023-12-09T18:56:19.237+01:00  INFO 18116 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-09T18:56:19.237+01:00  INFO 18116 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-09T18:56:19.352+01:00  INFO 18116 --- [main] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring embedded WebApplicationContext
+2023-12-09T18:56:19.353+01:00  INFO 18116 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2275 ms
+2023-12-09T18:56:20.333+01:00  INFO 18116 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/Banking'
+2023-12-09T18:56:20.346+01:00  INFO 18116 --- [main] com.example.zywaa.ZywaaApplication       : Started ZywaaApplication in 4.385 seconds (process running for 5.976)
+2023-12-09T18:56:26.560+01:00  INFO 18116 --- [http-nio-8087-exec-2] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-09T18:56:26.570+01:00  INFO 18116 --- [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-09T18:56:26.593+01:00  INFO 18116 --- [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2023-12-09T18:58:27.098+01:00  INFO 18972 --- [main] com.example.zywaa.ZywaaApplication       : Starting ZywaaApplication using Java 21.0.1 with PID 18972 (C:\Users\user\Documents\distributed-web\Zywaa\target\classes started by user in C:\Users\user\Documents\distributed-web\Zywaa)
+2023-12-09T18:58:27.102+01:00  INFO 18972 --- [main] com.example.zywaa.ZywaaApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T18:58:31.517+01:00  INFO 18972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2023-12-09T18:58:31.539+01:00  INFO 18972 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-09T18:58:31.540+01:00  INFO 18972 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-09T18:58:31.673+01:00  INFO 18972 --- [main] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring embedded WebApplicationContext
+2023-12-09T18:58:31.674+01:00  INFO 18972 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4401 ms
+2023-12-09T18:58:32.654+01:00  INFO 18972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/Banking'
+2023-12-09T18:58:32.668+01:00  INFO 18972 --- [main] com.example.zywaa.ZywaaApplication       : Started ZywaaApplication in 7.136 seconds (process running for 8.955)
+2023-12-09T18:58:37.519+01:00  INFO 18972 --- [http-nio-8087-exec-2] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-09T18:58:37.530+01:00  INFO 18972 --- [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-09T18:58:37.553+01:00  INFO 18972 --- [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2023-12-09T19:01:41.757+01:00  INFO 22540 --- [main] com.example.zywaa.ZywaaApplication       : Starting ZywaaApplication using Java 21.0.1 with PID 22540 (C:\Users\user\Documents\distributed-web\Zywaa\target\classes started by user in C:\Users\user\Documents\distributed-web\Zywaa)
+2023-12-09T19:01:41.760+01:00  INFO 22540 --- [main] com.example.zywaa.ZywaaApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T19:01:44.255+01:00  INFO 22540 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2023-12-09T19:01:44.275+01:00  INFO 22540 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-09T19:01:44.277+01:00  INFO 22540 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-09T19:01:44.447+01:00  INFO 22540 --- [main] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring embedded WebApplicationContext
+2023-12-09T19:01:44.449+01:00  INFO 22540 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2574 ms
+2023-12-09T19:01:45.508+01:00  INFO 22540 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/Banking'
+2023-12-09T19:01:45.522+01:00  INFO 22540 --- [main] com.example.zywaa.ZywaaApplication       : Started ZywaaApplication in 4.759 seconds (process running for 6.405)
+2023-12-09T19:02:13.508+01:00  INFO 7364 --- [main] com.example.zywaa.ZywaaApplication       : Starting ZywaaApplication using Java 21.0.1 with PID 7364 (C:\Users\user\Documents\distributed-web\Zywaa\target\classes started by user in C:\Users\user\Documents\distributed-web\Zywaa)
+2023-12-09T19:02:13.512+01:00  INFO 7364 --- [main] com.example.zywaa.ZywaaApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T19:02:16.013+01:00  INFO 7364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2023-12-09T19:02:16.034+01:00  INFO 7364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-09T19:02:16.038+01:00  INFO 7364 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-09T19:02:16.232+01:00  INFO 7364 --- [main] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring embedded WebApplicationContext
+2023-12-09T19:02:16.234+01:00  INFO 7364 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2593 ms
+2023-12-09T19:02:17.459+01:00  INFO 7364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/Banking'
+2023-12-09T19:02:17.473+01:00  INFO 7364 --- [main] com.example.zywaa.ZywaaApplication       : Started ZywaaApplication in 6.681 seconds (process running for 8.403)
+2023-12-09T19:02:29.132+01:00  INFO 5516 --- [main] com.example.zywaa.ZywaaApplication       : Starting ZywaaApplication using Java 21.0.1 with PID 5516 (C:\Users\user\Documents\distributed-web\Zywaa\target\classes started by user in C:\Users\user\Documents\distributed-web\Zywaa)
+2023-12-09T19:02:29.137+01:00  INFO 5516 --- [main] com.example.zywaa.ZywaaApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T19:02:34.770+01:00  INFO 5516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2023-12-09T19:02:34.804+01:00  INFO 5516 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-09T19:02:34.804+01:00  INFO 5516 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-09T19:02:35.002+01:00  INFO 5516 --- [main] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring embedded WebApplicationContext
+2023-12-09T19:02:35.012+01:00  INFO 5516 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5732 ms
+2023-12-09T19:02:42.968+01:00  INFO 5516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/Banking'
+2023-12-09T19:02:42.986+01:00  INFO 5516 --- [main] com.example.zywaa.ZywaaApplication       : Started ZywaaApplication in 14.828 seconds (process running for 16.498)
+2023-12-09T19:02:49.472+01:00  INFO 5516 --- [http-nio-8087-exec-1] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-09T19:02:49.473+01:00  INFO 5516 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-09T19:02:49.475+01:00  INFO 5516 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-12-09T19:12:52.923+01:00  INFO 22388 --- [main] com.example.zywaa.ZywaaApplication       : Starting ZywaaApplication using Java 21.0.1 with PID 22388 (C:\Users\user\Documents\distributed-web\Zywaa\target\classes started by user in C:\Users\user\Documents\distributed-web\Zywaa)
+2023-12-09T19:12:52.928+01:00  INFO 22388 --- [main] com.example.zywaa.ZywaaApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T19:12:55.465+01:00  INFO 22388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2023-12-09T19:12:55.485+01:00  INFO 22388 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-09T19:12:55.486+01:00  INFO 22388 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-09T19:12:55.621+01:00  INFO 22388 --- [main] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring embedded WebApplicationContext
+2023-12-09T19:12:55.622+01:00  INFO 22388 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2567 ms
+2023-12-09T19:12:56.526+01:00  INFO 22388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/Banking'
+2023-12-09T19:12:56.544+01:00  INFO 22388 --- [main] com.example.zywaa.ZywaaApplication       : Started ZywaaApplication in 4.588 seconds (process running for 6.346)
+2023-12-09T19:13:09.119+01:00  INFO 22388 --- [http-nio-8087-exec-2] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-09T19:13:09.120+01:00  INFO 22388 --- [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-09T19:13:09.124+01:00  INFO 22388 --- [http-nio-8087-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-12-09T19:18:56.308+01:00  INFO 15464 --- [main] com.example.zywaa.ZywaaApplication       : Starting ZywaaApplication using Java 21.0.1 with PID 15464 (C:\Users\user\Documents\distributed-web\Zywaa\target\classes started by user in C:\Users\user\Documents\distributed-web\Zywaa)
+2023-12-09T19:18:56.312+01:00  INFO 15464 --- [main] com.example.zywaa.ZywaaApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T19:18:58.491+01:00  INFO 15464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2023-12-09T19:18:58.516+01:00  INFO 15464 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-09T19:18:58.517+01:00  INFO 15464 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-09T19:18:58.651+01:00  INFO 15464 --- [main] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring embedded WebApplicationContext
+2023-12-09T19:18:58.652+01:00  INFO 15464 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2223 ms
+2023-12-09T19:18:59.488+01:00  INFO 15464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/Banking'
+2023-12-09T19:18:59.502+01:00  INFO 15464 --- [main] com.example.zywaa.ZywaaApplication       : Started ZywaaApplication in 4.078 seconds (process running for 5.575)
+2023-12-09T19:19:13.381+01:00  INFO 15464 --- [http-nio-8087-exec-1] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-09T19:19:13.402+01:00  INFO 15464 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-09T19:19:13.409+01:00  INFO 15464 --- [http-nio-8087-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2023-12-09T19:22:49.598+01:00  INFO 12996 --- [main] com.example.zywaa.ZywaaApplication       : Starting ZywaaApplication using Java 21.0.1 with PID 12996 (C:\Users\user\Documents\distributed-web\Zywaa\target\classes started by user in C:\Users\user\Documents\distributed-web\Zywaa)
+2023-12-09T19:22:49.602+01:00  INFO 12996 --- [main] com.example.zywaa.ZywaaApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T19:22:51.767+01:00  INFO 12996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2023-12-09T19:22:51.788+01:00  INFO 12996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-09T19:22:51.788+01:00  INFO 12996 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-09T19:22:51.912+01:00  INFO 12996 --- [main] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring embedded WebApplicationContext
+2023-12-09T19:22:51.912+01:00  INFO 12996 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2184 ms
+2023-12-09T19:22:52.758+01:00  INFO 12996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/Banking'
+2023-12-09T19:22:52.770+01:00  INFO 12996 --- [main] com.example.zywaa.ZywaaApplication       : Started ZywaaApplication in 4.109 seconds (process running for 5.614)
+2023-12-09T19:23:00.648+01:00  INFO 12996 --- [http-nio-8087-exec-3] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-09T19:23:00.711+01:00  INFO 12996 --- [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-09T19:23:00.716+01:00  INFO 12996 --- [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-12-09T19:28:17.728+01:00  INFO 7364 --- [main] com.example.zywaa.ZywaaApplication       : Starting ZywaaApplication using Java 21.0.1 with PID 7364 (C:\Users\user\Documents\distributed-web\Zywaa\target\classes started by user in C:\Users\user\Documents\distributed-web\Zywaa)
+2023-12-09T19:28:17.732+01:00  INFO 7364 --- [main] com.example.zywaa.ZywaaApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-12-09T19:28:19.923+01:00  INFO 7364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8087 (http)
+2023-12-09T19:28:19.945+01:00  INFO 7364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-09T19:28:19.946+01:00  INFO 7364 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2023-12-09T19:28:20.070+01:00  INFO 7364 --- [main] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring embedded WebApplicationContext
+2023-12-09T19:28:20.071+01:00  INFO 7364 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2217 ms
+2023-12-09T19:28:21.026+01:00  INFO 7364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8087 (http) with context path '/Banking'
+2023-12-09T19:28:21.041+01:00  INFO 7364 --- [main] com.example.zywaa.ZywaaApplication       : Started ZywaaApplication in 4.436 seconds (process running for 6.059)
+2023-12-09T19:28:39.784+01:00  INFO 7364 --- [http-nio-8087-exec-3] o.a.c.c.C.[.[localhost].[/Banking]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-09T19:28:39.787+01:00  INFO 7364 --- [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-09T19:28:39.794+01:00  INFO 7364 --- [http-nio-8087-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
